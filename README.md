@@ -1,2 +1,2 @@
 # MapGen
-`#RRGGBB` hoal
+`#RRGGBB` `#0969DA`
