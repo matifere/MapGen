@@ -54,7 +54,7 @@ public class DiamondSquareGen : MonoBehaviour
             for (int j = half; j < n - 1; j += step)
             {
                 matriz[i, j] = (matriz[i - half, j - half] + matriz[i - half, j + half] + matriz[i + half, j - half] + matriz[i + half, j + half]) / 4 + Random.Range(-roughness, roughness + 1);
-                // Asegúrate de que los valores generados no excedan los límites de la matriz
+                
                 matriz[i, j] = Mathf.Clamp(matriz[i, j], 0, tiles.Length - 1);
             }
         }
@@ -95,7 +95,7 @@ public class DiamondSquareGen : MonoBehaviour
                 }
 
                 matriz[i, j] = total / count + Random.Range(-roughness, roughness + 1);
-                // Asegúrate de que los valores generados no excedan los límites de la matriz
+                
                 matriz[i, j] = Mathf.Clamp(matriz[i, j], 0, tiles.Length - 1);
             }
         }
