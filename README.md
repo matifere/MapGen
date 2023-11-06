@@ -1,0 +1,2 @@
+# MapGen
+`Leer el GDD (GAME DESIGN DOCUMENT)`
