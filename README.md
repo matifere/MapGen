@@ -1,2 +1,2 @@
 # MapGen
-`#RRGGBB` `#0969DA`
+`Leer el GDD (GAME DESIGN DOCUMENT)`
