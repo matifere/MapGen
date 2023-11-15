@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DiamondSquare.unity
     guid: 7623b89c60763ae44b15552f32f0b693
+  - enabled: 1
+    path: Assets/Scenes/LazyFloodFill.unity
+    guid: 4c59fde09e608d74687a9f8de850ed1e
   m_configObjects: {}
