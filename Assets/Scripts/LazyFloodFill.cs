@@ -4,12 +4,17 @@ using Random = UnityEngine.Random;
 
 public class LazyFloodFill : MonoBehaviour
 {
+
     [SerializeField] private Tilemap Map;
-    [SerializeField] private TileBase[] tiles;
-    [SerializeField] private int n = 10; // Tamaño de la matriz
+    [SerializeField] public TileBase[] tiles;
+    [SerializeField] public int n = 10; // Tamaño de la matriz
     [SerializeField] private int indiceDeProb = 1;
     [SerializeField] private int Iter = 10;
 
+
+    //esto de aca es para el pasto:
+    public delegate void OnScriptAComplete();
+    public static event OnScriptAComplete ScriptAComplete;
 
     void Start()
     {
@@ -59,7 +64,7 @@ public class LazyFloodFill : MonoBehaviour
                         j - 1 >= 0 &&
                         j + 1 < n)
                 {
-                    actual = grid[i, j + 1]; //veo el de arriba
+                    actual = grid[i, j + 1]; //veo el de arriba (vale para cualquier direccion)
                     if ((grid[i - 1, j] == actual && grid[i + 1, j] == actual && grid[i, j + 1] == actual && grid[i, j - 1] == actual) && actual != grid[i, j])
                     {
                         grid[i, j] = actual;
@@ -78,6 +83,11 @@ public class LazyFloodFill : MonoBehaviour
                 TileBase tile = tiles[grid[i, j]];
                 Map.SetTile(new Vector3Int(i, j, 0), tile);
             }
+        }
+
+        if (ScriptAComplete != null)
+        {
+            ScriptAComplete();
         }
     }
     bool LazyBoolFill(int x, int y)
